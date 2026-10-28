@@ -45,3 +45,30 @@ GROUP BY categories.id;
 SELECT SUM(prix * quantite) AS valeur_stock FROM produits;
 --777.5
 
+--Q1.6 
+INSERT INTO produits (nom, prix, quantite, date_ajout, categorie_id)
+VALUES ('Test prix', -5, 1, '2026-10-05T08:00:00', 1);
+
+--L'exécution s'est terminée avec des erreurs.
+--Résultat : CHECK constraint failed: prix >= 0
+--À la ligne 1 :
+--INSERT INTO produits (nom, prix, quantite, date_ajout, categorie_id)
+--VALUES ('Test prix', -5, 1, '2026-10-05T08:00:00', 1);
+
+
+INSERT INTO produits (nom, prix, quantite, date_ajout, categorie_id)
+VALUES ('Test catégorie', 1, 1, '2026-10-05T08:00:00', 99);
+
+
+--L'exécution s'est terminée avec des erreurs.
+--Résultat : FOREIGN KEY constraint failed
+--À la ligne 1 :
+--INSERT INTO produits (nom, prix, quantite, date_ajout, categorie_id)
+--VALUES ('Test catégorie', 1, 1, '2026-10-05T08:00:00', 99);
+
+
+DELETE FROM categories WHERE id = 1;
+--L'exécution s'est terminée avec des erreurs.
+--Résultat : FOREIGN KEY constraint failed
+--À la ligne 1 :
+--DELETE FROM categories WHERE id = 1;
