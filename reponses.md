@@ -14,3 +14,6 @@ On ne peut pas supprimer une catégorie si elle contient encore des produits.
 
 Q1.4 :
 Huile d''olive : sert à ouvrir et fermer un texte
+
+
+
